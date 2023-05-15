@@ -37,10 +37,11 @@ public class LoginPage {
 		return driver.findElement(forgotPwdLink).isDisplayed();
 	}
 	
-	public void doLogin(String un, String pwd) {
+	public AccountsPage doLogin(String un, String pwd) {
 		driver.findElement(emailId).sendKeys(un);
 		driver.findElement(password).sendKeys(pwd);
 		driver.findElement(loginBtn).click();
+		return new AccountsPage(driver);
 	}
 
 }
